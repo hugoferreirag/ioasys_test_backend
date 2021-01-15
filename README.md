@@ -1,5 +1,8 @@
 # Back End Teste Ioasys
 
+### Documentação das APIS, contendo detalhementos de cada endpoint:
+https://documenter.getpostman.com/view/8905356/TVzUFHGJ
+
 ## Instalar dependencias
 
 ```
@@ -27,3 +30,4 @@ DB='http://url_do_banco_de_dados/nome_do_banco'
 ```
 Node.js, Javascript, Express, cors, bodyParser, bcrypt, jsonwebtoken.
 ```
+
