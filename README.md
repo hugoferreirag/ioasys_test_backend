@@ -28,6 +28,6 @@ DB='http://url_do_banco_de_dados/nome_do_banco'
 ### Ferramentas utilizadas:
 
 ```
-Node.js, Javascript, Express, cors, bodyParser, bcrypt, jsonwebtoken.
+Node.js, Javascript, Express, cors, bodyParser, bcrypt, jsonwebtoken, mongodb, mongoose (ODM).
 ```
 
