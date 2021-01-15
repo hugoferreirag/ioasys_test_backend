@@ -19,7 +19,6 @@ const filmsService = {
         director,
       });
       res.status(201).json(data);
-      return;
     } catch (error) {
       if (error.status) res.status(error.status).json(error.msg);
       else res.status(500).json(error);
@@ -73,7 +72,6 @@ const filmsService = {
 
       const data = await films.find();
       res.status(200).json(data);
-      return;
     } catch (error) {
       res.status(500).json(error);
     }
@@ -101,6 +99,11 @@ const filmsService = {
     try {
       if (!id) throw { msg: "Id inválidos", status: 400 };
       if (!vote) throw { msg: "Avaliação inválida", status: 400 };
+      if (vote > 4 || isNaN(vote))
+        throw {
+          msg: "Avaliação deve ser de 0 a 4, e o valor deve ser um número",
+          status: 400,
+        };
       const existsFilm = await films.findOne({ _id: id });
       if (!existsFilm) throw { msg: "Filme não existe", status: 400 };
       let userVoted = existsFilm._doc.rating.filter(
