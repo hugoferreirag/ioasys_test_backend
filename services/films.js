@@ -99,7 +99,7 @@ const filmsService = {
     try {
       if (!id) throw { msg: "Id inválidos", status: 400 };
       if (!vote) throw { msg: "Avaliação inválida", status: 400 };
-      if (vote > 4 || isNaN(vote))
+      if (vote < 0 || vote > 4 || isNaN(vote))
         throw {
           msg: "Avaliação deve ser de 0 a 4, e o valor deve ser um número",
           status: 400,
