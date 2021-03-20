@@ -3,6 +3,7 @@ const routers = express.Router();
 const userServices = require("../services/user");
 
 routers.post("/list", (req, res) => {
+  console.log('naio')
   userServices.getAll(req, res);
 });
 routers.post("/create", (req, res) => {
