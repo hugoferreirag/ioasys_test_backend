@@ -9,8 +9,8 @@ const isAdmin = require("../middlewares/isAdmin");
 
 routers.use("/login", authRouter);
 routers.use("/user", userRouters);
-routers.use("/admin", authMiddleware, isAdmin, adminRouters);
+routers.use("/admin", adminRouters);
 routers.use("/auth", authRouter);
-routers.use("/films", authMiddleware, isAdmin, filmsRouters);
+routers.use("/films", filmsRouters);
 
 module.exports = routers;
