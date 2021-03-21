@@ -3,9 +3,9 @@ const methods = require("../methods");
 
 const filmsService = {
   save: async (req, res) => {
-    const { name, description, genre, actors, director } = req.body;
+    const { name, description, genre, director } = req.body;
     try {
-      if (!name || !description || !genre || !actors || !director)
+      if (!name || !description || !genre ||  !director)
         throw { msg: "Dados inválidos", status: 400 };
 
       const existsFilm = await films.findOne({ name, director });
@@ -15,7 +15,6 @@ const filmsService = {
         name,
         description,
         genre,
-        actors,
         director,
       });
       res.status(201).json(data);
