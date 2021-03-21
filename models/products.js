@@ -7,30 +7,17 @@ const schema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    category: {
+      type: String,
+      required: true
+    },
+    price: {
+      type: Number,
+      required: true,
+    },
     description: {
       type: String,
       required: true,
-    },
-    genre: {
-      type: String,
-      required: true,
-    },
-    director: {
-      type: String,
-      required: true,
-    },
-    rating: [
-      {
-        idUser: {
-          type: String,
-        },
-        vote: {
-          type: Number,
-        },
-      },
-    ],
-    average: {
-      type: Number,
     },
     deletedAt: {
       type: String,
@@ -38,6 +25,6 @@ const schema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-const films = mongoose.model("films", schema);
+const products = mongoose.model("products", schema);
 
-module.exports = films;
+module.exports = products;

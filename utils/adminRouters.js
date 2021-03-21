@@ -1,7 +1,7 @@
 const adminRouters = [
-  "/films/create",
-  "/films/delete",
-  "/films/update",
+  "/categories/create",
+  "/categories/delete",
+  "/categories/update",
   "/user/list",
   "/admin/list",
   "/admin/delete",

@@ -1,4 +1,4 @@
-const filmsRouters = require("./films");
+const categoriesRouters = require("./categories");
 const userRouters = require("./user");
 const adminRouters = require("./admin");
 const authRouter = require("./auth");
@@ -11,6 +11,6 @@ routers.use("/login", authRouter);
 routers.use("/user", userRouters);
 routers.use("/admin", adminRouters);
 routers.use("/auth", authRouter);
-routers.use("/films", filmsRouters);
+routers.use("/categories", categoriesRouters);
 
 module.exports = routers;
