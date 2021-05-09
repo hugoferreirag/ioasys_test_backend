@@ -45,6 +45,7 @@ const userService = {
       const data = await user.create(newUser);
       const { password, ...rest } = data._doc;
       res.status(201).json({ data: rest, msg: "Criado com sucesso" });
+      
     } catch (error) {
       if (error.status) res.status(error.status).json(error.msg);
       else res.status(500).json(error);
