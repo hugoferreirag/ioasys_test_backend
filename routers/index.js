@@ -1,4 +1,5 @@
 const categoriesRouters = require("./categories");
+const productsRouters = require("./products");
 const userRouters = require("./user");
 const adminRouters = require("./admin");
 const authRouter = require("./auth");
@@ -12,5 +13,6 @@ routers.use("/user", userRouters);
 routers.use("/admin", adminRouters);
 routers.use("/auth", authRouter);
 routers.use("/categories", categoriesRouters);
+routers.use("/products", productsRouters);
 
 module.exports = routers;
