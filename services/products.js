@@ -4,7 +4,6 @@ const methods = require("../methods");
 const productsService = {
   save: async (req, res) => {
     const { name, description, image , category} = req.body;
-    console.log(image)
     try {
       if (!name || !description  || !image || !category )
         throw { msg: "Dados inválidos", status: 400 };
