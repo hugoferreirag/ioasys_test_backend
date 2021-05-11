@@ -8,8 +8,8 @@ routers.post("/list", (req, res) => {
 routers.post("/filter", (req, res) => {
   statesService.filter(req, res);
 });
-routers.put("/vote/:id", (req, res) => {
-  statesService.vote(req, res);
+routers.put("/edit/:id", (req, res) => {
+  statesService.update(req, res);
 });
 
 routers.post("/create", (req, res) => {

@@ -30,13 +30,13 @@ const userService = {
     try {
       if (!email || !req.body.password || !name)
         throw { msg: "Dados inválidos", status: 400 };
-
+      
       const newUser = {
         name,
         email,
         password: await encryptPassword(req.body.password),
       };
-
+     
       const existsUser = await user.findOne({ email: newUser.email });
 
       if (existsUser)

@@ -20,8 +20,11 @@ const schema = new mongoose.Schema(
       required: true,
     },
     deletedAt: {
-      type: String,
+      type: Boolean,
     },
+    highlights: {
+      type: Boolean,
+    }
   },
   { timestamps: true }
 );

@@ -16,7 +16,7 @@ const userService = {
       if (!user) throw { msg: "Usuário não existe", status: 400 };
       if (!bcrypt.compareSync(password, user.password))
         throw { msg: "Senha inválida", status: 400 };
-
+    
       user.password = undefined;
 
       res.status(200).json({ token: generateToken({ id: user._id }) });
@@ -27,9 +27,9 @@ const userService = {
   },
 };
 
-const generateToken = (params = {}) =>
+const generateToken = (params) =>
   jwt.sign(params, authConfig.secret, {
-    expiresIn: 18000,
+    expiresIn: 1200000,
   });
 
 module.exports = userService;
