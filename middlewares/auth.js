@@ -21,10 +21,8 @@ module.exports = (req, res, next) => {
 
   jwt.verify(token, authConfig.secret, async (error, decoded) => {
     if (error) return res.status(401).json({ msg: "Token inválido" });
-    console.log(decoded, decoded.id)
     req.userId = decoded.id;
     const verifyIsAdmin = await user.findOne({ _id: req.userId  });
-    console.log(verifyIsAdmin)
     if (!verifyIsAdmin) {
       return res
         .status(401)
